@@ -4,15 +4,17 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 214, 219, 220; /* light gray similar to Reddit's old layout */
+  --background-end-rgb: 255, 255, 255; /* white background for a clean look */
+  --link-color: 0, 121, 211; /* blue color for links */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 19, 24, 28; /* dark background similar to Reddit's dark mode */
+    --background-end-rgb: 13, 17, 23; /* slightly darker for gradient end */
+    --link-color: 140, 179, 229; /* lighter blue for better visibility in dark mode */
   }
 }
 
@@ -24,6 +26,18 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+/* Define utility classes for link styling */
+@layer components {
+  .reddit-link {
+    color: rgb(var(--link-color));
+    text-decoration: none;
+  }
+  .reddit-link:hover {
+    color: rgb(var(--link-color));
+    text-decoration: underline;
+  }
 }
 
 @layer utilities {
