@@ -1,4 +1,3 @@
-// pages/submit.tsx
 import React, { useState } from 'react';
 import Layout from '../components/layout'; // Ensure this is correctly imported
 
@@ -22,7 +21,7 @@ const SubmitObservation = () => {
                             id="speciesName"
                             placeholder="Species Name"
                             type="text"
-                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-gray-900 focus:outline-none focus:ring-green-500 focus:border-green-500"
                         />
                     </div>
                     <div className="mb-4">
@@ -30,7 +29,7 @@ const SubmitObservation = () => {
                         <textarea
                             id="description"
                             placeholder="Describe your observation"
-                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500"
+                            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-gray-900 focus:outline-none focus:ring-green-500 focus:border-green-500"
                         />
                     </div>
                     <div className="mb-4">
@@ -40,7 +39,7 @@ const SubmitObservation = () => {
                             type="file"
                             accept="image/*"
                             onChange={handleImageChange}
-                            className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100"
+                            className="mt-1 block w-full text-sm text-gray-900 file:mr-4 file:py-2 file:px-4 file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100"
                         />
                         {image && <img src={image} alt="Preview" className="mt-4 w-full max-w-xs" />}
                     </div>
