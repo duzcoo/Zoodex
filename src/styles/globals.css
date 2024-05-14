@@ -7,6 +7,10 @@
   --background-start-rgb: 214, 219, 220; /* light gray similar to Reddit's old layout */
   --background-end-rgb: 255, 255, 255; /* white background for a clean look */
   --link-color: 0, 121, 211; /* blue color for links */
+  --card-bg: 255, 255, 255; /* white background for cards */
+  --card-text: 0, 0, 0; /* black text for cards */
+  --nav-bg: 19, 24, 28; /* dark background for nav bar, similar to dark mode background */
+  --button-bg: 34, 139, 34; /* forest green for buttons */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,20 +19,22 @@
     --background-start-rgb: 19, 24, 28; /* dark background similar to Reddit's dark mode */
     --background-end-rgb: 13, 17, 23; /* slightly darker for gradient end */
     --link-color: 140, 179, 229; /* lighter blue for better visibility in dark mode */
+    --card-bg: 28, 32, 36; /* dark gray for cards in dark mode */
+    --card-text: 255, 255, 255; /* white text for cards in dark mode */
+    --nav-bg: 13, 17, 23; /* even darker for contrast in nav bar */
+    --button-bg: 60, 179, 113; /* medium sea green for buttons */
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    to bottom,
+    transparent,
+    rgb(var(--background-end-rgb))
+  ) rgb(var(--background-start-rgb));
 }
 
-/* Define utility classes for link styling */
 @layer components {
   .reddit-link {
     color: rgb(var(--link-color));
@@ -37,6 +43,33 @@ body {
   .reddit-link:hover {
     color: rgb(var(--link-color));
     text-decoration: underline;
+  }
+
+  .nav-bar {
+    background-color: rgb(var(--nav-bg));
+  }
+
+  .nav-button {
+    background-color: rgb(var(--button-bg));
+    color: white;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    transition: background-color 0.2s;
+  }
+  .nav-button:hover {
+    background-color: rgb(var(--button-bg-hover));
+  }
+
+  .animal-card {
+    background-color: rgb(var(--card-bg));
+    color: rgb(var(--card-text));
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  .animal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
   }
 }
 
